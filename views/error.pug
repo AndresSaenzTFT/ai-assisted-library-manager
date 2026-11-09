@@ -1,0 +1,7 @@
+extends layout
+
+//- Display the error message, status, and diagnostic stack.
+block content
+  h1= err.message
+  h2= err.status
+  pre #{err.stack}

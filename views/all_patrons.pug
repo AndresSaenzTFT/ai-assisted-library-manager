@@ -1,0 +1,45 @@
+extends layout
+
+//- Search and page through registered patrons.
+block content
+  h2 All Patrons
+  p
+    a.button(href='/patrons/new') Add New Patron
+  form.search-form(action='/patrons', method='get')
+    label(for='search') Search patrons
+    .search-form__controls
+      input#search(type='search', name='search', value=search, placeholder='Search name, email, address, or library ID')
+      button.button(type='submit') Search
+      if search
+        a.button.button-secondary(href='/patrons') Clear
+  .table-wrap
+    table
+      thead
+        tr
+          th Library ID
+          th First Name
+          th Last Name
+          th Email
+          th Address
+          th Zip Code
+      tbody
+        if patrons.length
+          each patron in patrons
+            tr
+              td
+                a(href='/patrons/' + patron.id)= patron.library_id
+              td= patron.first_name
+              td= patron.last_name
+              td= patron.email
+              td= patron.address || '—'
+              td= patron.zip_code || '—'
+        else
+          tr
+            td(colspan='6')= search ? 'No results found.' : 'No patrons have been added yet.'
+  if pages.length > 1
+    nav.pagination(aria-label='Patron pages')
+      each paginationPage in pages
+        if paginationPage.current
+          span(aria-current='page')= paginationPage.number
+        else
+          a(href=paginationPage.href)= paginationPage.number

@@ -1,0 +1,41 @@
+extends layout
+
+//- Search and page through the book catalog.
+block content
+  h2 All Books
+  p
+    a.button(href='/books/new') Add New Book
+  form.search-form(action='/books', method='get')
+    label(for='search') Search books
+    .search-form__controls
+      input#search(type='search', name='search', value=search, placeholder='Search title, author, genre, or year')
+      button.button(type='submit') Search
+      if search
+        a.button.button-secondary(href='/books') Clear
+  .table-wrap
+    table
+      thead
+        tr
+          th Title
+          th Author
+          th Genre
+          th First Published (Year)
+      tbody
+        if books.length
+          each book in books
+            tr
+              td
+                a(href='/books/' + book.id)= book.title
+              td= book.author
+              td= book.genre || '—'
+              td= book.first_published || '—'
+        else
+          tr
+            td(colspan='4')= search ? 'No results found.' : 'No books have been added yet.'
+  if pages.length > 1
+    nav.pagination(aria-label='Book pages')
+      each paginationPage in pages
+        if paginationPage.current
+          span(aria-current='page')= paginationPage.number
+        else
+          a(href=paginationPage.href)= paginationPage.number

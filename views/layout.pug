@@ -1,0 +1,16 @@
+//- Shared page shell, stylesheets, and content block for all views.
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title || 'Library Manager'
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/global.css')
+  body
+    header
+      .wrap.header--flex
+        h1.header--logo
+          a(href='/') Library Manager
+    main.wrap
+      block content

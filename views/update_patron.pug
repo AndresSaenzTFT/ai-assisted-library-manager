@@ -1,0 +1,27 @@
+extends layout
+
+//- Keep the assigned library ID visible while editing patron details.
+block content
+  h2 Update Patron
+  if errors && errors.length
+    .validation--errors
+      h3 Please correct the following errors:
+      ul
+        each error in errors
+          li= error.message
+  form.form--centered(action='/patrons/' + patron.id, method='post', novalidate)
+    input(type='hidden', name='_method', value='PUT')
+    p Library ID: #{patron.library_id}
+    label(for='first_name') First Name
+    input#first_name(type='text', name='first_name', value=patron.first_name)
+    label(for='last_name') Last Name
+    input#last_name(type='text', name='last_name', value=patron.last_name)
+    label(for='address') Address
+    input#address(type='text', name='address', value=patron.address)
+    label(for='email') Email
+    input#email(type='email', name='email', value=patron.email)
+    label(for='zip_code') Zip Code
+    input#zip_code(type='number', name='zip_code', value=patron.zip_code)
+    button.button(type='submit') Update Patron
+  p
+    a(href='/patrons') Back to All Patrons

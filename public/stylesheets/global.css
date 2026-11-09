@@ -1,0 +1,338 @@
+/* global.css */
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 1.25em;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+p {
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    hyphens: auto;
+}
+a {
+    color: #939;
+    text-decoration: none;
+}
+.wrap {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+header {
+    background: #57496e;
+    color: #fff;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.header--flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header--logo a {
+    font-size: 1.25rem;
+    color: #fff;
+}
+header li {
+    font-size: .8rem;
+}
+header nav a {
+    color: #dbd;
+}
+header nav a:hover {
+    color: #fff;
+}
+
+.header--signedin li {
+    text-align: right;
+    line-height: 1.25;
+}
+.header--signedout li {
+    display: inline-block;
+    margin-left: .5rem;
+}
+.course--module {
+    background: #7c689b;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+.course--label {
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: .25rem;
+}
+.course--title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+.course--add--module {
+    background: #ddd9e4;
+    color: #57496e;
+    font-weight: 300;
+    font-size: 1.25rem;
+}
+.course--add--title .add {
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+    fill: #57496e;
+}
+.course--detail--title {
+    padding-bottom: .25rem;
+    border-bottom: 1px solid #888;
+    margin: 3rem 0 .5rem;
+    font-size: .9rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.course--name {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    font-weight: 700;
+    color: #47395e;
+}
+.course--detail--list {
+    font-weight: 300;
+    margin: 0 0 1.5rem 1rem;
+    line-height: 1.5;
+}
+.actions--bar {
+    background: #e9e5f0;
+    padding: 1rem 0;
+    margin: -2rem 0 2rem;
+}
+.validation--errors {
+    background: #e9e5f0;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-bottom: 2.5rem;
+}
+.validation--errors h3 {
+    color: #800;
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+.validation--errors ul {
+    font-weight: 300;
+    margin-left: 1rem;
+    line-height: 1.25;
+}
+.validation--errors li {
+    margin-bottom: .5rem;
+}
+.validation--errors li:last-child {
+    margin-bottom: 0;
+}
+
+.form--centered {
+    max-width: 510px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+form {
+    margin-bottom: 2.5rem;
+}
+label {
+    display: block;
+    font-weight: 300;
+    margin-bottom: .25rem;
+}
+input, textarea {
+    display: block;
+    width: 100%;
+    color: #332a40;
+    border-radius: .5rem;
+    border: 1px solid #8c789b;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    font-family: 'Work Sans', sans-serif;
+    font-size: .8rem;
+}
+input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+.search-form {
+    max-width: 640px;
+    margin-bottom: 1.5rem;
+}
+.search-form__controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.search-form__controls input {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+.search-form__controls .button {
+    flex: 0 0 auto;
+    margin: 0;
+}
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border: 1px solid #d8d2df;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(51, 42, 64, .08);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: .8rem;
+}
+th, td {
+    padding: .8rem 1rem;
+    border-bottom: 1px solid #e6e2eb;
+    vertical-align: middle;
+}
+th {
+    background: #f0edf4;
+    color: #47395e;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+tbody tr:nth-child(even) {
+    background: #faf9fb;
+}
+tbody tr:hover {
+    background: #f1edf6;
+}
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+td a {
+    font-weight: 600;
+}
+td[colspan] {
+    padding: 1.25rem 1rem;
+    color: #555;
+    text-align: center;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin: 1.5rem 0;
+}
+.pagination a, .pagination span {
+    min-width: 2rem;
+    padding: .4rem .65rem;
+    border: 1px solid #8c789b;
+    border-radius: .35rem;
+    text-align: center;
+}
+.pagination a:hover, .pagination span[aria-current='page'] {
+    background: #7c689b;
+    color: #fff;
+}
+textarea {
+    min-height: 300px;
+}
+.button {
+    background: #7c689b;
+    color: #fff;
+    font-size: 1rem;
+    padding: .75rem 1.5rem;
+    border: 0;
+    margin: 0 0 .5rem 0;
+    display: block;
+    width: 210px;
+    text-align: center;
+    border-radius: .5rem;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+.button:last-child {
+    margin-bottom: 0;
+}
+.button:not(.button-secondary):hover {
+    background: #63537d;
+    cursor: pointer;
+}
+.button-secondary {
+    color: #7c689b;
+    background: none;
+    box-shadow: 0 0 0 2px #7c689b inset;
+    transition: box-shadow 0.2s, color 0.2s;
+}
+.button-secondary:hover {
+    color: #63537d;
+    box-shadow: 0 0 0 2px #63537d inset;
+    cursor: pointer;
+}
+input:focus, button:focus, .button:focus, textarea:focus {
+    border: none;
+    border-radius: 0;
+    outline: 2px solid #332a40;
+}
+
+@media screen and (max-width: 599px) {
+    .search-form__controls {
+        flex-wrap: wrap;
+    }
+    .search-form__controls input {
+        flex-basis: 100%;
+    }
+    table {
+        min-width: 600px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .header--signedin li {
+        display: inline-block;
+        margin-left: .5rem;
+        line-height: 1;
+    }
+    .main--grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.5rem;
+        grid-auto-rows: 1fr;
+    }
+}
+@media screen and (min-width: 800px) {
+    .main--grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .main--flex {
+        display: flex;
+    }
+    .main--flex div:first-child {
+        flex-basis: 62%;
+    }
+    .main--flex div:last-child {
+        margin-left: 8%;
+        flex-basis: 30%;
+    }
+    .course--detail--title {
+        margin: 1.5rem 0 .5rem;
+    }
+    .button {
+        margin: 0 .5rem 0 0;
+        display: inline-block;
+    }
+}
